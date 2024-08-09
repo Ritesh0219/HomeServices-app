@@ -15,6 +15,7 @@ function Hero() {
             <Input placeholder='Search' className=' rounded-full md:w-[650px]'/>
             <Button className='rounded-full h-[46px]'><Search className='h-4 w-4' /></Button>
         </div>
+        
     </div>
   )
 }
