@@ -3,18 +3,18 @@ import Image from 'next/image'; // Import the Image component from Next.js if us
 
 function BusinessList({ businessList, title }) {
   return (
-    <div className='mt-5'>
+    <div className='mt-5 w-full'>
       <h2 className='font-bold text-[22px]'> 
         {title}
       </h2>
-      <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5'> {/* Adjusted grid layout */}
+      <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 w-full'> {/* Adjusted grid layout */}
         {businessList.map((business, index) => (
           <div 
             className='flex flex-col gap-4  p-2  rounded-md shadow-md  hover:scale-105 transition-transform duration-200 ease-linear'
             key={index}
           >
             
-            <div className='grid gap-2 grid-cols-1'>
+            <div className='grid gap-2 grid-cols-1 w-full'>
               {business.images.map((image, imgIndex) => (
                 <div key={imgIndex} className='flex justify-center'>
                   <Image
@@ -22,7 +22,7 @@ function BusinessList({ businessList, title }) {
                     alt={`Image for ${business.name}`}
                     width={400}
                     height={400}
-                    className='rounded-md object-cover'  // Ensure the image covers the area
+                    className='rounded-md'  // Ensure the image covers the area
                   />
                 </div>
               ))}

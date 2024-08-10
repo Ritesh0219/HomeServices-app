@@ -4,7 +4,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className='p-2 shadow-sm flex items-center justify-between'>
+    <div className='py-2 w-full shadow-sm flex items-center justify-between'>
         <div className='flex  items-center'>
             <Image src='/cleaning.png' alt='logo' width={35} height={35} className='hover:scale-105'/>
         </div>
