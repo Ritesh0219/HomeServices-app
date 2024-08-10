@@ -3,7 +3,7 @@ import Hero from "./_components/Hero";
 import CategoryList from "./_components/CategoryList";
 import GlobalApi from "./_services/GlobalApi";
 import { useEffect, useState } from "react";
-import BusinessList from "./_components/businessList";
+import BusinessList from "./_components/BusinessList";
 
 
 
