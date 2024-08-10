@@ -29,10 +29,9 @@ function BusinessList({ businessList, title }) {
             </div>
             <div className='flex flex-col gap-1 items-baseline'>
                 <h1 className='p-1 px-2 text-[12px] bg-[#ffe9da] text-primary rounded-full'>{business.category.name}</h1>
-                <h2 className='text-primary  font-semibold'>{business.contactPerson}</h2>
+                <h2 className='text-primary text-[13px]  font-semibold'>{business.contactPerson}</h2>
                 <h2 className='text-black text-lg font-semibold'>{business.name}</h2>
-               
-                <h2 className='text-black  font-semibold'>{business.address}</h2>
+                <h2 className='text-black text-[13px] font-semibold'>{business.address}</h2>
             </div>
             
           </div>
