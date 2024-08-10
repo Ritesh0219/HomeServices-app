@@ -13,7 +13,7 @@ function CategoryList({ categoryList }) {
       ) : (
         categoryList.map((category) => (
           <div 
-            className={`flex flex-col items-center justify-center p-4 md:py-4 lg:py-4 gap-2 cursor-pointer hover:scale-105 transition-transform duration-200 ease-linear bg-[#ffe9da] rounded-md`} 
+            className={`flex flex-col items-center justify-center p-4 md:py-4 lg:py-4 gap-2 cursor-pointer hover:scale-110 transition-transform duration-10 ease-linear bg-[#ffe9da] rounded-md`} 
             key={category.id}
           >
             <Image
