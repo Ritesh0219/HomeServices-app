@@ -38,7 +38,7 @@ export default function Home() {
     <div className="w-full">
        <Hero/>
        <CategoryList categoryList={categoryList}/>
-       <BusinessList businessList={businessList} title={'Popular Business'} />
+       <BusinessList businessList={businessList}  />
     </div>
   );
 }
