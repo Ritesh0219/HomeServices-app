@@ -18,7 +18,7 @@ function Header() {
         </div>
         <div className='flex  gap-3 items-center justify-center' >
           {!user?
-            <a href='/dashboard'>
+            <a href='/'>
             <button className='bg-primary text-[15px] text-white px-3 py-2 rounded-full hover:bg-orange-800' >Get Started</button>
             </a>
             :
