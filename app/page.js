@@ -35,7 +35,7 @@ export default function Home() {
     })
   }
   return (
-    <div className="w-full">
+    <div className="mt-10">
        <Hero/>
        <CategoryList categoryList={categoryList}/>
        <BusinessList businessList={businessList}  />

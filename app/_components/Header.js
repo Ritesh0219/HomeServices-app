@@ -1,6 +1,7 @@
 'use client'
 import { UserButton, useUser } from '@clerk/nextjs'
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 
 function Header() {
@@ -8,9 +9,13 @@ function Header() {
   
   return (
     <div className='py-2 w-full shadow-sm flex items-center justify-between'>
-        <div className='flex  items-center'>
+        <Link href='/'>
+        <div className='flex  items-center p-1'>
             <Image src='/cleaning.png' alt='logo' width={35} height={35} className='hover:scale-105'/>
         </div>
+        </Link>
+        
+        
         <div className='hidden md:flex items-center gap-6 '>
                 <h2 className='hover:scale-105 hover:text-primary cursor-pointer'>Home</h2>
                 <h2 className='hover:scale-105 hover:text-primary cursor-pointer'>Services</h2>
@@ -23,7 +28,7 @@ function Header() {
             </a>
             :
            <div className=' flex items-center justify-center border-[3px]   rounded-full border-primary '>
-               <UserButton defaultOpen  />
+               <UserButton/>
            </div>
           }
             
