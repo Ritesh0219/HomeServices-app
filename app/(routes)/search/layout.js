@@ -8,7 +8,7 @@ function layout({children}) {
         <div className='p-2 rounded-lg hidden md:block'> 
             <CategorySideBar/>
         </div>
-        <div className=' md:col-span-3  bg-red-100 p-2 rounded-lg'>
+        <div className=' md:col-span-3  p-2 rounded-lg'>
           {children}
         </div>
       </div>
