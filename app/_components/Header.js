@@ -23,11 +23,11 @@ function Header() {
         </div>
         <div className='flex  gap-3 items-center justify-center' >
           {!user?
-            <a href='/'>
+            <a href='/search'>
             <button className='bg-primary text-[15px] text-white px-3 py-2 rounded-full hover:bg-orange-800' >Get Started</button>
             </a>
             :
-           <div className=' flex items-center justify-center border-[3px]   rounded-full border-primary '>
+           <div className=' flex items-center justify-center border  rounded-full border-primary '>
                <UserButton/>
            </div>
           }
