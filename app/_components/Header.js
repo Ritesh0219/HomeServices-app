@@ -9,7 +9,7 @@ function Header() {
   
   return (
     <div className='py-2 w-full shadow-sm flex items-center justify-between'>
-        <Link href='/search/'>
+        <Link href='/'>
         <div className='flex  items-center p-1'>
             <Image src='/cleaning.png' alt='logo' width={35} height={35} className='hover:scale-105'/>
         </div>
