@@ -3,7 +3,7 @@ import { clerkMiddleware,
   
   const isProtectedRoute = createRouteMatcher([
     // '/details/(.*)',
-    '/files(.*)',
+    '/search/(.*)',
   
   ]);
   
