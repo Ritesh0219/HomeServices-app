@@ -9,7 +9,7 @@ function Header() {
   
   return (
     <div className='py-2 w-full shadow-sm flex items-center justify-between'>
-        <Link href='/'>
+        <Link href='/search/'>
         <div className='flex  items-center p-1'>
             <Image src='/cleaning.png' alt='logo' width={35} height={35} className='hover:scale-105'/>
         </div>
@@ -27,7 +27,7 @@ function Header() {
             <button className='bg-primary text-[15px] text-white px-3 py-2 rounded-full hover:bg-orange-800' >Get Started</button>
             </a>
             :
-           <div className=' flex items-center justify-center border-[3px]   rounded-full border-primary '>
+           <div className=' flex items-center justify-center border   rounded-full border-primary '>
                <UserButton/>
            </div>
           }
