@@ -28,8 +28,8 @@ function BusinessList({ businessList = [] }) {
                           <Image
                             src={image.url}
                             alt={`Image for ${business.name}`}
-                            width={400}
-                            height={400}
+                            width={500}
+                            height={500}
                             className='rounded-md object-cover'
                           />
                         </div>

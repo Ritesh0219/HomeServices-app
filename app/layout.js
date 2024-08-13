@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
-        <div className="mx-4 md:mx-8"> 
+        <div className="m-4 md:mx-8"> 
           <Header/>
            {children}
         </div>

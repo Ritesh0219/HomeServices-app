@@ -22,7 +22,7 @@ function BuisnessByCategory({params}) {
     })
   }
   return (
-    <div className='m-5'>
+    <div className=''>
      <BusinessList businessList={businessList}/>
     </div>
   )
