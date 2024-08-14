@@ -10,7 +10,7 @@ function BusinessList({ businessList = [] }) {
           <h2 className='text-lg font-semibold'>Loading Business</h2>
         </div>
       ) : (
-        <div className='grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5'>
+        <div className='grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5'>
           {businessList.map((business) => (
             <Link
               key={business.id} // Assuming each business has a unique 'id'
@@ -54,7 +54,7 @@ function BusinessList({ businessList = [] }) {
                   </div>
                   <div>
                     <button className='bg-primary w-full text-white p-2 rounded-full hover:bg-orange-800'>
-                      Book Now
+                    Get More Info
                     </button>
                   </div>
                 </div>

@@ -1,6 +1,10 @@
 import { Clock3, Mail, MapPin, NotebookPen, User } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import BookingSection from './BookingSection'
+
+
+
 
 function BusinessInfo({business}) {
   return business?.name&&(
@@ -19,7 +23,10 @@ function BusinessInfo({business}) {
             <h2 className='flex gap-2 text-gray-500 hover:text-black'><MapPin/>{business?.address}</h2>
             <h2 className='flex gap-2  font-bold'><Clock3/>Available 8:00 AM to 10:00 PM</h2>
            <div className='w-full flex items-center justify-center md:justify-start mt-2'>
-           <button className='bg-primary  flex gap-2 px-4 py-2 rounded-full text-white hover:bg-orange-700'><NotebookPen/>Book Apointment</button>
+           
+           <BookingSection>
+            <button className='bg-primary  flex gap-2 px-4 py-2 rounded-full text-white hover:bg-orange-700'><NotebookPen/>Book Apointment</button>
+           </BookingSection>
            </div>
         </div>
        </div>
