@@ -98,22 +98,25 @@ const result=await request(Master_URL, query)
 
 
 const createNewBooking = async(businessId, date, time, userEmail, userName)=>{
-  const mutationQuery = gql`
-    mutation CreateBooking {
-      createBooking(
-        data: {
-          bookingStatus: booked,
-          businessList: { connect: { id: "${businessId}" } },
-          date: "${date}",
-          time: "${time}",
-          userEmail: "${userEmail}",
-          userName: "${userName}"
-        }
-      ) {
-        id
-      }
-    }
-  `
+//   const mutationQuery = gql` mutation MyMutation {
+//   createBooking(
+//     data: {bookingStatus: booked, time: "`+businessId+`", date: "`+date+`", userEmail: "`+userEmail+`", userName: "`+userName+`"}
+//   ) {
+//     id
+//   }
+// }`
+
+const mutationQuery = gql`mutation MyMutation {
+  createBooking(
+    data: {bookingStatus: booked, businessList: {connect: {id: "`+businessId+`"}}, date: "`+date+`", time: "`+time+`", userEmail: "`+userEmail+`", userName: "`+userName+`"}
+  ) {
+    id
+  }
+    publishManyBookings(to: PUBLISHED) {
+    count
+  }
+}`
+
 const result=await request(Master_URL, mutationQuery)
   return result
 

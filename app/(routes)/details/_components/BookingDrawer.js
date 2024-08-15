@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Drawer, Typography } from '@mui/joy';
+import { Drawer, Typography, Snackbar, Alert } from '@mui/joy'; // Import Snackbar and Alert
 import { NotebookPen, X } from 'lucide-react';
 import DatePick from '../_components/DatePicker';
 import GlobalApi from '../../../_services/GlobalApi';
@@ -11,13 +11,17 @@ function BookingDrawer({ business }) {
   const [date, setDate] = useState(null);
   const [timeSlot, setTimeSlot] = useState([]);
   const [selectedTime, setSelectedTime] = useState();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState('success'); // can be 'success', 'info', 'warning', 'error'
   const { user } = useUser();
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {setOpen(false),setDate(),setSelectedTime()};
 
   useEffect(() => {
     getTime();
+   
   }, []);
 
   const getTime = () => {
@@ -35,14 +39,33 @@ function BookingDrawer({ business }) {
 
   const saveBooking = () => {
     GlobalApi.createNewBooking(
-      business.id,
+      business?.id,
       date,
       selectedTime,
       user?.primaryEmailAddress?.emailAddress,
       user?.fullName
-    ).then((resp) => {
-      alert(`Booking Successful! for date: ${date} and time: ${selectedTime} ${resp}`);
+    )
+    .then(resp => {
+      if (resp) {
+        setSnackbarMessage('Service Booked Successfully!');
+        setSnackbarSeverity('success');
+        setDate();
+        setSelectedTime();
+      } else {
+        setSnackbarMessage('Failed to Book a Service.');
+        setSnackbarSeverity('error');
+      }
+      setSnackbarOpen(true);
+    })
+    .catch(error => {
+      setSnackbarMessage('Failed to Book a Service.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
     });
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -107,6 +130,21 @@ function BookingDrawer({ business }) {
           </div>
         </div>
       </Drawer>
+
+      {/* Snackbar for notifications */}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert 
+          onClose={handleSnackbarClose} 
+          severity={snackbarSeverity} 
+          variant="filled"
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

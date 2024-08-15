@@ -16,11 +16,7 @@ function Header() {
         </Link>
         
         
-        <div className='hidden md:flex items-center gap-6 '>
-                <h2 className='hover:scale-105 hover:text-primary cursor-pointer'>Home</h2>
-                <h2 className='hover:scale-105 hover:text-primary cursor-pointer'>Services</h2>
-                <h2 className='hover:scale-105 hover:text-primary cursor-pointer'>Contact</h2>
-        </div>
+       
         <div className='flex  gap-3 items-center justify-center' >
           {!user?
             <a href='/search/'>
