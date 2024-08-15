@@ -25,7 +25,7 @@ function BusinessInfo({business}) {
             <h2 className='flex gap-2 text-gray-500 hover:text-black'><MapPin/>{business?.address}</h2>
             <h2 className='flex gap-2  font-bold'><Clock3/>Available 8:00 AM to 10:00 PM</h2>
            <div className='w-full flex items-center justify-center md:justify-start mt-2'> 
-           <BookingDrawer/>
+           <BookingDrawer business={business}/>
            </div>
         </div>
        </div>
