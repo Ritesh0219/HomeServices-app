@@ -41,7 +41,7 @@ export default function Home() {
        <CategoryList categoryList={categoryList}/>
     </div>
     <div className="md:px-15">
-      <BusinessList businessList={businessList}  />v
+      <BusinessList businessList={businessList}  />
     </div>
     </>
   );
