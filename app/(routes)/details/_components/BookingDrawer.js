@@ -42,7 +42,7 @@ function BookingDrawer(children) {
     setTimeSlot(timeList)
 
     const saveBooking = ()=>{
-      
+
     }
   }
 
@@ -68,7 +68,7 @@ function BookingDrawer(children) {
          <div>
          <div className='grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4 mt-6 md:mt-10 mx-4 md:mx-20'>
               {timeSlot.map((item, index)=>(
-                <button className={`py-2 border rounded-lg ${selectedTime === item.time ? 'hover:bg-orange-700' : 'hover:bg-gray-100'} ${selectedTime==item.time&&'bg-primary text-white hover:bg-orange-700'}`} key={index}
+                <button className={`py-2 border rounded-lg ${selectedTime === item.time ? 'hover:bg-primary' : 'hover:bg-gray-100'} ${selectedTime==item.time&&'bg-primary text-white hover:bg-orange-700'}`} key={index}
                 onClick={()=>setSelectedTime(item.time)}> 
                 {item.time}
                 </button>
