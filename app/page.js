@@ -35,10 +35,14 @@ export default function Home() {
     })
   }
   return (
+    <>
     <div className="mt-10">
        <Hero/>
        <CategoryList categoryList={categoryList}/>
-       <BusinessList businessList={businessList}  />
     </div>
+    <div className="md:px-15">
+      <BusinessList businessList={businessList}  />v
+    </div>
+    </>
   );
 }

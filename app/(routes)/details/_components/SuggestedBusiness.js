@@ -21,7 +21,7 @@ function SuggestedBusiness({business}) {
     })
   }
   return (
-    <div className='flex flex-col items-center justify-center mt-2 md:mt-8'>
+    <div className='flex flex-col items-center justify-center mt-2 md:mt-5 md:p-8'>
     <div>
     <h1 className='text-primary text-xl font-semibold'>Similar Businesses</h1>
     <BusinessList businessList={businessList}/>

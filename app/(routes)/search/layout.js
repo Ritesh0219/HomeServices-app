@@ -1,5 +1,7 @@
 import React from 'react'
 import CategorySideBar from '../search/_components/CategorySideBar'
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 function layout({children}) {
   return (
@@ -9,7 +11,9 @@ function layout({children}) {
             <CategorySideBar/>
         </div>
         <div className=' md:col-span-3  p-2 rounded-lg'>
+       
           {children}
+         
         </div>
       </div>
       
