@@ -22,8 +22,8 @@ function CategoryList({ categoryList }) {
             <Image
               src={category.icon.url}
               alt={`Icon for ${category.name}`}
-              width={35}
-              height={35}
+              width={45}
+              height={45}
             />
             <h2 className='text-primary font-semibold'>{category.name}</h2>
           </div>
