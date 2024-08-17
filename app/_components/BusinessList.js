@@ -40,7 +40,7 @@ function BusinessList({ businessList = [] }) {
                   )}
                   <div className='flex flex-col gap-1 items-baseline'>
                     <h1 className='p-1 px-2 text-[12px] bg-[#ffe9da] text-primary rounded-full'>
-                      {business.category?.name || 'Category'}
+                      {business?.category?.name || 'Category'}
                     </h1>
                     <h2 className='text-primary text-[13px] font-semibold'>
                       {business.contactPerson || 'Contact Person'}

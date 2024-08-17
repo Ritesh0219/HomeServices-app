@@ -38,9 +38,11 @@ export default function Home() {
     <>
     <div className="">
        <Hero/>
-       <CategoryList categoryList={categoryList}/>
     </div>
-    <div className="md:px-15">
+    <div>
+    <CategoryList categoryList={categoryList}/>
+    </div>
+    <div className="md:px-20">
       <BusinessList businessList={businessList}  />
     </div>
     </>
