@@ -19,7 +19,7 @@ function Header() {
        
         <div className='flex  gap-3 items-center justify-center' >
           {!user?
-            <a href='/search/'>
+            <a href='/search/Cleaning'>
             <button className='bg-primary text-[15px] text-white px-3 py-2 rounded-full hover:bg-orange-800' >Get Started</button>
             </a>
             :
@@ -27,9 +27,9 @@ function Header() {
                <div className='border-[2px] flex items-center justify-center  border-primary rounded-full'>
                <UserButton/>
                </div>
-               <div>
+               <Link href={'/mybooking'}>
                <button className='bg-primary text-white px-3 py-2  text-center hover:bg-orange-700 rounded-full'>My Bookings</button>
-               </div>
+               </Link>
            </div>
           }
             
