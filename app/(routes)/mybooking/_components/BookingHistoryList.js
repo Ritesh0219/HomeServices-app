@@ -54,7 +54,7 @@ function BookingHistoryList({ bookingHistory, section }) {
                 <h2 className='text-primary items-center flex gap-2 text-md font-medium'>
                   <span className='text-primary'><Calendar /></span>
                   <h2>
-                    Booked on :
+                    Booked :
                   </h2>
                   {formatDate(booking?.date) || 'Date'}
                 </h2>
