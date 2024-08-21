@@ -19,7 +19,7 @@ function BusinessList({ businessList = [] }) {
             >
               
                 <div
-                  className='flex flex-col gap-4 p-4 rounded-md shadow-md hover:scale-105 transition-transform duration-300 ease-in-out bg-white'
+                  className='flex flex-col gap-4 p-4 rounded-md shadow-md hover:scale-105 hover:transition-transform duration-300 ease-in-out bg-white'
                 >
                   {business.images && business.images.length > 0 ? (
                     <div className='grid gap-2 grid-cols-1'>
