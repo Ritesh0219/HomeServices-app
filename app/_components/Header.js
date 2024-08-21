@@ -24,12 +24,13 @@ function Header() {
             </a>
             :
            <div className=' flex items-center gap-2 justify-between   text-primary  bg-white '>
+               
+               <Link href={'/mybooking'}>
+               <button className='bg-primary text-white px-3 py-2 text-[12px] text-center hover:bg-orange-700 rounded-full'>My Bookings</button>
+               </Link>
                <div className='border-[2px] flex items-center justify-center  border-primary rounded-full'>
                <UserButton/>
                </div>
-               <Link href={'/mybooking'}>
-               <button className='bg-primary text-white px-3 py-2  text-center hover:bg-orange-700 rounded-full'>My Bookings</button>
-               </Link>
            </div>
           }
             
