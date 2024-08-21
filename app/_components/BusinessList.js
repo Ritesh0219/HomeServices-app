@@ -7,7 +7,7 @@ function BusinessList({ businessList = [] }) {
     <div className='mt-5'>
       {businessList.length === 0 ? (
         <div className='w-full h-[80vh] text-center flex mb-4 rounded-lg items-center justify-center text-black bg-gray-100 animate-pulse mt-5'>
-          <h2 className='text-lg font-semibold'>Loading Business</h2>
+          <h2 className='text-lg font-semibold w-full'>Loading Business</h2>
         </div>
       ) : (
         <div className='grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5'>
