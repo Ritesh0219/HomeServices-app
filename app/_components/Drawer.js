@@ -1,72 +1,38 @@
 import * as React from 'react';
 import Box from '@mui/joy/Box';
 import Drawer from '@mui/joy/Drawer';
-import ButtonGroup from '@mui/joy/ButtonGroup';
-import Button from '@mui/joy/Button';
 import List from '@mui/joy/List';
 import Divider from '@mui/joy/Divider';
 import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 
-export default function DrawerAnchor() {
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor) => (
+export default function DrawerAnchor({ open, onClose, categories }) {
+  // Define the list of items for the drawer
+  const list = () => (
     <Box
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={onClose} // Close the drawer when clicking inside
+      onKeyDown={onClose}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
-          <ListItem key={text}>
-            <ListItemButton>{text}</ListItemButton>
+        {categories.map((category) => (
+          <ListItem key={category}>
+            <ListItemButton>{category}</ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text) => (
-          <ListItem key={text}>
-            <ListItemButton>{text}</ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      {/* You can add more lists or sections here if needed */}
     </Box>
   );
 
   return (
-    <React.Fragment>
-      <ButtonGroup variant="outlined">
-        {['top', 'right', 'bottom', 'left'].map((anchor) => (
-          <Button key={anchor} onClick={toggleDrawer(anchor, true)}>
-            {anchor}
-          </Button>
-        ))}
-      </ButtonGroup>
-      {['top', 'right', 'bottom', 'left'].map((anchor) => (
-        <Drawer
-          key={anchor}
-          anchor={anchor}
-          open={state[anchor]}
-          onClose={toggleDrawer(anchor, false)}
-        >
-          {list(anchor)}
-        </Drawer>
-      ))}
-    </React.Fragment>
+    <Drawer
+      anchor='left' // Define which side the drawer opens from
+      open={open}
+      onClose={onClose}
+    >
+      {list()}
+    </Drawer>
   );
 }

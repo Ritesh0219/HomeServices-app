@@ -1,4 +1,4 @@
-import { Calendar, MapPin, User } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -14,12 +14,12 @@ const formatDate = (dateString) => {
   return `${day} ${month} ${year}`;
 };
 
-function BookingHistoryList({ bookingHistory }) {
+function BookingHistoryList({ bookingHistory, section }) {
   return (
     <div className='md:w-[90%]'>
-      {bookingHistory.length === 0 ? (
-        <div className='w-full h-[80vh] text-center flex mb-4 rounded-lg items-center justify-center text-black bg-gray-100 animate-pulse mt-5'>
-          <h2 className='text-lg font-semibold'>Loading Bookings...</h2>
+      {section === 'completed' && bookingHistory.length === 0 ? (
+        <div className='w-full h-[80vh] text-center flex mb-4 rounded-lg items-center justify-center text-black bg-gray-100 mt-5'>
+          <h2 className='text-lg font-semibold'>No Business Found</h2>
         </div>
       ) : (
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-5 cursor-default'>
@@ -51,12 +51,11 @@ function BookingHistoryList({ bookingHistory }) {
                 <h2 className='text-gray-500 text-[13px] font-medium'>
                   {booking?.businessList?.address || 'Business Address'}
                 </h2>
-                <h2 className='text-primary  items-center flex gap-2 text-md font-medium'>
-                <span className='text-primary'><Calendar /></span>
-                <h2>
-                  Booked on :
-                </h2>
-                  
+                <h2 className='text-primary items-center flex gap-2 text-md font-medium'>
+                  <span className='text-primary'><Calendar /></span>
+                  <h2>
+                    Booked on :
+                  </h2>
                   {formatDate(booking?.date) || 'Date'}
                 </h2>
               </div>
