@@ -56,8 +56,16 @@ function BookingHistoryList({ bookingHistory, section }) {
                   <h2>
                     Booked :
                   </h2>
-                  {formatDate(booking?.date) || 'Date'}
-                </h2>
+                  <div className='flex flex-col md:flex-row md:gap-2 text-primary'>
+                    <h2>
+                     {formatDate(booking?.date) || 'Date'}
+                    </h2>
+                    <h2>
+                      {booking?.time}
+                    </h2>
+                  </div>
+                  </h2>
+                 
               </div>
             </div>
           ))}
