@@ -19,7 +19,7 @@ function BookingHistoryList({ bookingHistory, section }) {
     <div className='md:w-[90%]'>
       {section === 'completed' && bookingHistory.length === 0 ? (
         <div className='w-full h-[80vh] text-center flex mb-4 rounded-lg items-center justify-center text-black bg-gray-100 mt-5'>
-          <h2 className='text-lg font-semibold'>No Business Found</h2>
+          <h2 className='text-lg font-semibold w-full'>No Business Found</h2>
         </div>
       ) : (
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-5 cursor-default'>
